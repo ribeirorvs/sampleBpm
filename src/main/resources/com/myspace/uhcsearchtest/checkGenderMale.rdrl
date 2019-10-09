@@ -1,0 +1,12 @@
+package com.myspace.uhcsearchtest;
+
+import java.lang.Number;
+
+rule "checkGenderMale"
+	dialect "mvel"
+	ruleflow-group "gender"
+	when
+		c : client( gender == ( "m" ) )
+	then
+		c.setPronouns( "Hi, Mister" );
+end

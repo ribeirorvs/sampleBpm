@@ -1,0 +1,12 @@
+package com.myspace.uhcsearchtest;
+
+import java.lang.Number;
+
+rule "orderDiscountRate2"
+	dialect "mvel"
+	ruleflow-group "orderDiscount"
+	when
+		o : order( totalAmount > 10 )
+	then
+		o.setTotalAmount( o.totalAmount - 10 );
+end

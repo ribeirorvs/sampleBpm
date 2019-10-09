@@ -1,0 +1,12 @@
+package com.myspace.uhcsearchtest;
+
+import java.lang.Number;
+
+rule "unvalidateClient"
+	dialect "java"
+	ruleflow-group "validation"
+	when
+		c : client( age < 18 )
+	then
+		c.setValidated( false );
+end

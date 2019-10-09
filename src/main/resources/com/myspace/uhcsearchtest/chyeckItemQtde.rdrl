@@ -1,0 +1,12 @@
+package com.myspace.uhcsearchtest;
+
+import java.lang.Number;
+
+rule "chyeckItemQtde"
+	dialect "mvel"
+	ruleflow-group "checkItem"
+	when
+		i : item( qtde > 0 )
+	then
+		i.setValidated( true );
+end

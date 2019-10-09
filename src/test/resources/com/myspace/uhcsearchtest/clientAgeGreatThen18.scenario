@@ -1,0 +1,57 @@
+<scenario>
+  <name>clientAgeGreatThen18.scenario</name>
+  <maxRuleFirings>100000</maxRuleFirings>
+  <globals/>
+  <fixtures>
+    <fact-data>
+      <type>client</type>
+      <fieldData>
+        <field-data>
+          <name>age</name>
+          <value>19</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>client</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+      <name>validation</name>
+    </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+    <execution-trace>
+      <executionTimeResult>10</executionTimeResult>
+      <numberOfRulesFired>1</numberOfRulesFired>
+    </execution-trace>
+    <expect-rule>
+      <ruleName>validateClient</ruleName>
+      <explanation>Rule [validateClient] was activated 1 times.</explanation>
+      <expectedFire>true</expectedFire>
+      <successResult>true</successResult>
+      <actualResult>1</actualResult>
+    </expect-rule>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>validated</fieldName>
+          <expected>true</expected>
+          <successResult>true</successResult>
+          <explanation>[client] field [validated] was [true].</explanation>
+          <operator>==</operator>
+          <nature>0</nature>
+        </expect-field>
+      </fieldValues>
+      <name>client</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
+  </fixtures>
+  <lastRunResult>2019-10-09 17:58:21.632 UTC</lastRunResult>
+  <rules/>
+  <inclusive>false</inclusive>
+  <packageName>com.myspace.uhcsearchtest</packageName>
+  <imports>
+    <imports/>
+  </imports>
+  <ksessions>
+    <string>defaultKieSession</string>
+  </ksessions>
+</scenario>
